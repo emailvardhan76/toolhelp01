@@ -1,0 +1,146 @@
+.products-page {
+    padding-top: 100px;
+    padding-bottom: 5rem;
+}
+
+.products-page h1 {
+    font-size: 3rem;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.products-list {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+.product-item {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    background: rgba(255, 255, 255, 0.5);
+    padding: 2rem;
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    transition: transform 0.3s ease;
+}
+
+.product-item:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.product-item:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.product-info {
+    flex: 1;
+    text-align: left;
+}
+
+.product-info h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--accent);
+}
+
+.product-info p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.feature-list {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.feature-list li {
+    background: var(--bg-color);
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    border: 1px solid var(--accent);
+}
+
+.product-info button {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 50px;
+    background: var(--accent);
+    color: white;
+    /* Optimally contrast check this */
+    /* If accent is yellow, black text might be better, but assuming white for now */
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: bold;
+}
+
+.product-info button:hover {
+    opacity: 0.9;
+    transform: scale(1.05);
+}
+
+.product-visual {
+    flex: 1;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-logo-container {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    transition: all 0.5s ease;
+    position: relative;
+}
+
+.product-logo-container::after {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    border-radius: 50%;
+    border: 2px dashed currentColor;
+    /* Uses the color inherited from inline style */
+    opacity: 0.3;
+    animation: spin 20s linear infinite;
+}
+
+.product-item:hover .product-logo-container {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@media (max-width: 768px) {
+
+    .product-item,
+    .product-item:nth-child(even) {
+        flex-direction: column;
+    }
+}

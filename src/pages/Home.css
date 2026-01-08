@@ -1,0 +1,66 @@
+.home-page {
+    padding-top: 100px;
+    /* Space for fixed navbar */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero-section {
+    text-align: center;
+    margin-bottom: 4rem;
+    animation: fadeIn 1s ease-out;
+}
+
+.hero-title {
+    font-size: 5rem;
+    font-weight: 900;
+    letter-spacing: -2px;
+    margin-bottom: 0.5rem;
+    /* Remove gradient from container, apply to spans or keep simple color for now to allow transform */
+    color: var(--accent-color);
+    display: flex;
+    justify-content: center;
+    cursor: default;
+}
+
+.hover-char {
+    display: inline-block;
+    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), color 0.2s;
+    background: linear-gradient(45deg, #1A1A1A, #4a4a4a);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hover-char:hover {
+    transform: translateY(-15px) scale(1.3) rotate(5deg);
+    -webkit-text-fill-color: #006400;
+    /* Dark Green on hover */
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    opacity: 0.6;
+    font-weight: 300;
+}
+
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    width: 100%;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
